@@ -1,12 +1,32 @@
-#include "Sample.class.cpp"
+#include "Sample.class.hpp"
+#include <iostream>
+
+void f0(void)
+{
+	Sample instance;
+	
+	std::cout << "Number of instances: " << Sample::getNbInst()  << std::endl;
+
+	return;
+
+}
+void f1(void)
+{
+	Sample instance;
+	std::cout << "Number of instances: " << Sample::getNbInst()  << std::endl;
+	f0();
+
+	return;
+
+}
 
 int main()
 {
 	Sample instance;
 
-	instance.foo = 42;
-	std::cout << "instance.foo: " << instance.foo << std::endl;
-	instance.bar();
+	std::cout << "Number of instances: " << Sample::getNbInst()  << std::endl;
+	f1();
+	std::cout << "Number of instances: " << Sample::getNbInst()  << std::endl;
 
 	return (0);
 }

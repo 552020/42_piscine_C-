@@ -4,7 +4,7 @@
 Sample::Sample(void)
 {
 	std::cout << "Constructor called" << std::endl;
-	Sample::_nbinst += 1;
+	Sample::_nbInst += 1;
 
 	return;
 }
@@ -12,13 +12,13 @@ Sample::Sample(void)
 Sample::~Sample(void)
 {
 	std::cout << "Destructor called" << std::endl;
-	Sample::_nbinst -= 1;
+	Sample::_nbInst -= 1;
 	return;
 }
 
-void Sample::getNbInst(void)
+int	 Sample::getNbInst(void)
 {
-	return Sample::_nbinst;
+	return Sample::_nbInst;
 }
 
-int Sample::_nbinst = 0;
+int Sample::_nbInst = 0;
